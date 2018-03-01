@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
 Begin VB.Form frmMERB 
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Multi-EditROM Builder"
+   Caption         =   "Multi-EditROM Builder and Compare Utility"
    ClientHeight    =   8025
    ClientLeft      =   45
    ClientTop       =   390
@@ -1256,7 +1256,7 @@ Private Sub cmdCompare_Click()
     Cr = Chr(13)
    
     '--- Check target filename
-    Filename = txtFN(0): If Exists(Filename) = False Then MsgBox "You must put the file to compare with in SLOT 1": Exit Sub
+    Filename = txtFN(SelNum): If Exists(Filename) = False Then MsgBox "You must select a SLOT containing a file!": Exit Sub
         
     '--- Open the Output file
     FIO = FreeFile
@@ -1264,13 +1264,13 @@ Private Sub cmdCompare_Click()
     Buf = Input(FLen, FIO)                              'Read entire file to buffer
     Close FIO                                           'Close the file
     
-    Results = "Comparing to SLOT 1..." & Cr             'Initial result text
+    Results = "Comparing to SLOT " & Format(SelNum + 1) & "..." & Cr          'Initial result text
     
     '--- Process Files
-    For I = 1 To 15
+    For I = 0 To 15
         Filename = txtFN(I).Text
             
-        If Exists(Filename) = True Then
+        If (Exists(Filename) = True) And I <> SelNum Then
             FIO2 = FreeFile
             Open Filename For Binary As FIO2: FLen2 = LOF(FIO2)      'Open file and get length
             Buf2 = Input(FLen2, FIO2)                                'Read entire file to buffer

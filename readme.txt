@@ -1,5 +1,5 @@
 MERB: Multi-EditROM Builder  (c)2017 Steve J. Gray
-===========================  Version 1.0, Aug 29, 2017
+===========================  Version 1.1, March 1, 2018
 
 This is a tool to build binary images for my Multi-Editor ROM projects:
 
@@ -75,6 +75,14 @@ Burning an Image
 
 The resulting ROM/BIN file will be 65535 bytes (64K) long and should be burned to a 27512
 (512KBit/64KByte) EPROM.
+
+
+Comparing ROMs
+--------------
+
+ You can compare ROMs. Select a SLOT to be the target reference ROM. Clicking the
+COMPARE button will return if the other ROM files are Larger, Smaller, Equal or how many bytes are
+different. Empty slots will be skipped. The results are shown in the INFO window.
 
 
 Conclusion
