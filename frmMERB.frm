@@ -1270,7 +1270,7 @@ Private Sub cmdCompare_Click()
     For I = 0 To 15
         Filename = txtFN(I).Text
             
-        If (Exists(Filename) = True) And I <> SelNum Then
+        If (Exists(Filename) = True) And (I <> SelNum) Then
             FIO2 = FreeFile
             Open Filename For Binary As FIO2: FLen2 = LOF(FIO2)      'Open file and get length
             Buf2 = Input(FLen2, FIO2)                                'Read entire file to buffer
