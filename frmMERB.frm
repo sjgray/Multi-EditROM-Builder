@@ -13,6 +13,14 @@ Begin VB.Form frmMERB
    ScaleHeight     =   8025
    ScaleWidth      =   11565
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton cmdCompare 
+      Caption         =   "Compare"
+      Height          =   405
+      Left            =   7830
+      TabIndex        =   48
+      Top             =   7560
+      Width           =   1755
+   End
    Begin VB.TextBox txtDesc 
       Height          =   315
       Left            =   1800
@@ -46,8 +54,8 @@ Begin VB.Form frmMERB
       Width           =   1755
    End
    Begin MSComDlg.CommonDialog CommonDialog 
-      Left            =   10890
-      Top             =   1350
+      Left            =   11070
+      Top             =   840
       _ExtentX        =   847
       _ExtentY        =   847
       _Version        =   393216
@@ -59,7 +67,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   38
       Top             =   7110
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -68,7 +76,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   36
       Top             =   6720
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -77,7 +85,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   34
       Top             =   6330
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -86,7 +94,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   32
       Top             =   5940
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -95,7 +103,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   30
       Top             =   5550
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -104,7 +112,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   28
       Top             =   5160
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -113,7 +121,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   26
       Top             =   4770
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -122,7 +130,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   24
       Top             =   4380
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -131,7 +139,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   22
       Top             =   4020
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -140,7 +148,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   20
       Top             =   3630
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -149,7 +157,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   18
       Top             =   3240
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -158,7 +166,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   16
       Top             =   2850
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -167,7 +175,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   14
       Top             =   2460
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -176,7 +184,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   12
       Top             =   2070
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.TextBox txtFN 
       Height          =   345
@@ -185,15 +193,15 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   10
       Top             =   1680
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.CommandButton cmdBuild 
       Caption         =   "Build It!"
       Height          =   405
-      Left            =   9480
+      Left            =   9690
       TabIndex        =   8
       Top             =   7560
-      Width           =   2025
+      Width           =   1755
    End
    Begin VB.CommandButton cmdDel 
       Caption         =   "Delete Entry"
@@ -218,7 +226,7 @@ Begin VB.Form frmMERB
       OLEDropMode     =   1  'Manual
       TabIndex        =   5
       Top             =   1290
-      Width           =   7245
+      Width           =   6825
    End
    Begin VB.CommandButton cmdSaveSet 
       Caption         =   "Save Set"
@@ -243,6 +251,361 @@ Begin VB.Form frmMERB
       TabIndex        =   0
       Top             =   60
       Width           =   1605
+   End
+   Begin VB.Shape Shape3 
+      BackColor       =   &H000000FF&
+      BackStyle       =   1  'Opaque
+      FillColor       =   &H0000FFFF&
+      Height          =   195
+      Left            =   10710
+      Top             =   1680
+      Width           =   165
+   End
+   Begin VB.Shape Shape2 
+      BackColor       =   &H0000FF00&
+      BackStyle       =   1  'Opaque
+      FillColor       =   &H0000FFFF&
+      Height          =   195
+      Left            =   10110
+      Top             =   1680
+      Width           =   165
+   End
+   Begin VB.Label Label5 
+      Caption         =   "2K          4K         Over"
+      Height          =   255
+      Left            =   9660
+      TabIndex        =   65
+      Top             =   1665
+      Width           =   2055
+   End
+   Begin VB.Shape Shape1 
+      BackColor       =   &H0000FFFF&
+      BackStyle       =   1  'Opaque
+      FillColor       =   &H0000FFFF&
+      Height          =   195
+      Left            =   9465
+      Top             =   1680
+      Width           =   165
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "16"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   15
+      Left            =   7320
+      TabIndex        =   64
+      Top             =   7110
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "15"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   14
+      Left            =   7320
+      TabIndex        =   63
+      Top             =   6720
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "14"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   13
+      Left            =   7320
+      TabIndex        =   62
+      Top             =   6360
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "13"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   12
+      Left            =   7320
+      TabIndex        =   61
+      Top             =   5970
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "12"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   11
+      Left            =   7320
+      TabIndex        =   60
+      Top             =   5580
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "11"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   10
+      Left            =   7320
+      TabIndex        =   59
+      Top             =   5190
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "10"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   9
+      Left            =   7320
+      TabIndex        =   58
+      Top             =   4800
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "09"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   8
+      Left            =   7320
+      TabIndex        =   57
+      Top             =   4440
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "08"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   7
+      Left            =   7320
+      TabIndex        =   56
+      Top             =   4050
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "07"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   6
+      Left            =   7320
+      TabIndex        =   55
+      Top             =   3660
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "06"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   5
+      Left            =   7320
+      TabIndex        =   54
+      Top             =   3270
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "05"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   4
+      Left            =   7320
+      TabIndex        =   53
+      Top             =   2880
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "04"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   3
+      Left            =   7320
+      TabIndex        =   52
+      Top             =   2490
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "03"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   2
+      Left            =   7320
+      TabIndex        =   51
+      Top             =   2100
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "02"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   1
+      Left            =   7320
+      TabIndex        =   50
+      Top             =   1710
+      Width           =   345
+   End
+   Begin VB.Label lblK 
+      Alignment       =   2  'Center
+      BackColor       =   &H00000000&
+      Caption         =   "01"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   345
+      Index           =   0
+      Left            =   7320
+      TabIndex        =   49
+      Top             =   1320
+      Width           =   345
    End
    Begin VB.Label Label4 
       Caption         =   "File Size:"
@@ -654,7 +1017,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub cmdAbout_Click()
-    MsgBox "MultiEditROM Builder, (C)2017 Steve J. Gray" & Cr & "Version 1.0 - Aug 29/2017"
+    MsgBox "MultiEditROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.1 - March 1/2018"
 End Sub
 
 Private Sub lblN_DblClick(Index As Integer)
@@ -669,6 +1032,9 @@ Private Sub lblN_Click(Index As Integer)
     SelectN Index
 End Sub
 
+Private Sub lblK_Click(Index As Integer)
+    SelectN Index
+End Sub
 Private Sub cmdAdd_Click()
     Dim Filename As String
     
@@ -716,49 +1082,66 @@ Private Sub cmdSaveSet_Click()
 End Sub
 
 Private Sub cmdDown_Click()
-    Dim Tmp As String
+    Dim Tmp As String, RGB As Long
     
     If SelNum < 15 Then
         Tmp = txtFN(SelNum).Text
         txtFN(SelNum).Text = txtFN(SelNum + 1).Text
-        txtFN(SelNum + 1) = Tmp
+        txtFN(SelNum + 1).Text = Tmp
+        
+        RGB = lblK(SelNum).BackColor
+        lblK(SelNum).BackColor = lblK(SelNum + 1).BackColor
+        lblK(SelNum + 1).BackColor = RGB
+        
         SelectN SelNum + 1
     End If
     
 End Sub
 
 Private Sub cmdUp_Click()
-    Dim Tmp As String
+    Dim Tmp As String, RGB As Long
     
     If SelNum > 0 Then
         Tmp = txtFN(SelNum).Text
         txtFN(SelNum).Text = txtFN(SelNum - 1).Text
-        txtFN(SelNum - 1) = Tmp
+        txtFN(SelNum - 1).Text = Tmp
+        
+        RGB = lblK(SelNum).BackColor
+        lblK(SelNum).BackColor = lblK(SelNum - 1).BackColor
+        lblK(SelNum - 1).BackColor = RGB
+        
         SelectN SelNum - 1
     End If
     
 End Sub
 
 Private Sub cmdDel_Click()
-    Dim Tmp As String, I As Integer
+    Dim Tmp As String, I As Integer, RGB As Long
     
     If SelNum = 16 Then
         txtFN(SelNum).Text = ""
+        lblK(SelNum).BackColor = vbBlack
     Else
         For I = SelNum To 14
             txtFN(I).Text = txtFN(I + 1).Text
+            lblK(I).BackColor = lblK(I + 1).BackColor
         Next
         txtFN(15).Text = ""
+        lblK(15).BackColor = vbBlack
     End If
 End Sub
 Private Sub cmdIns_Click()
-    Dim I As Integer
+    Dim I As Integer, RGB As Long
+    
         If SelNum < 15 Then
             For I = 15 To SelNum + 1 Step -1
                 txtFN(I).Text = txtFN(I - 1).Text
+                lblK(I).BackColor = lblK(I - 1).BackColor
             Next
         End If
         txtFN(SelNum).Text = ""
+        lblK(SelNum).BackColor = vbBlack
+        
 End Sub
 
 Private Sub SelectN(ByVal Index As Integer)
@@ -791,6 +1174,12 @@ Private Sub ShowInfo(ByVal Index As Integer)
         Open Filename For Binary As FIO
         FLen = LOF(FIO)
         
+        Select Case FLen
+            Case 2048: lblK(Index).BackColor = vbYellow
+            Case 4096: lblK(Index).BackColor = vbGreen
+            Case Else: lblK(Index).BackColor = vbRed
+        End Select
+        
         lblSize.Caption = Str(FLen)
         
         If FLen > 2048 Then
@@ -801,6 +1190,7 @@ Private Sub ShowInfo(ByVal Index As Integer)
         If Tmp = "" Then Tmp = "No info available"          '2K files have no IO area
     Else
         Tmp = "File does not exist!"                        'Couldn't find file
+        lblK(Index).BackColor = vbBlack
     End If
     
     Close FIO
@@ -856,7 +1246,62 @@ Private Sub cmdBuild_Click()
     MsgBox "File successfully created!!!"
     
 End Sub
-
+'--- Compare ROMs
+Private Sub cmdCompare_Click()
+    Dim Filename As String, FIO As Integer, FIO2 As Integer, FLen As Integer, FLen2 As Integer
+    Dim I As Integer, J As Integer, Buf As String, Buf2 As String, Difs As Integer
+    Dim FX(15) As Boolean 'File Exists Flags array
+    Dim Cr As String, Results As String, B1 As String, B2 As String
+    
+    Cr = Chr(13)
+   
+    '--- Check target filename
+    Filename = txtFN(0): If Exists(Filename) = False Then MsgBox "You must put the file to compare with in SLOT 1": Exit Sub
+        
+    '--- Open the Output file
+    FIO = FreeFile
+    Open Filename For Binary As FIO: FLen = LOF(FIO)    'Open file and get length
+    Buf = Input(FLen, FIO)                              'Read entire file to buffer
+    Close FIO                                           'Close the file
+    
+    Results = "Comparing to SLOT 1..." & Cr             'Initial result text
+    
+    '--- Process Files
+    For I = 1 To 15
+        Filename = txtFN(I).Text
+            
+        If Exists(Filename) = True Then
+            FIO2 = FreeFile
+            Open Filename For Binary As FIO2: FLen2 = LOF(FIO2)      'Open file and get length
+            Buf2 = Input(FLen2, FIO2)                                'Read entire file to buffer
+            Close FIO2                                               'Close it
+            
+            Difs = 0
+            Results = Results & "SLOT" & Format(I + 1) & ": "         'Add slot#
+            
+            For J = 1 To FLen
+                If J > FLen2 Then Results = Results & " is shorter.": Exit For 'done comparing
+                B1 = Mid(Buf, J, 1)
+                B2 = Mid(Buf2, J, 1)
+                If B1 <> B2 Then Difs = Difs + 1
+            Next J
+            If FLen2 > FLen Then Results = Results & " is longer."
+            
+            If Difs = 0 Then
+                Results = Results & "MATCHES!"                      'File is SAME
+            Else
+                Results = Results & Format(Difs) & " bytes differ."  'File DIFFERS
+            End If
+            Results = Results & Cr                                  'Add CR
+        End If
+        
+    Next I
+    
+    Close FIO
+    
+    lblInfo.Caption = Results
+    
+End Sub
 '===================
 ' FUNCTIONS and SUBS
 '===================
