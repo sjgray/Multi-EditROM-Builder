@@ -13,6 +13,16 @@ Begin VB.Form frmMERB
    ScaleHeight     =   8025
    ScaleWidth      =   11565
    StartUpPosition =   3  'Windows Default
+   Begin VB.ComboBox cboMode 
+      Height          =   315
+      ItemData        =   "frmMERB.frx":0000
+      Left            =   6510
+      List            =   "frmMERB.frx":000A
+      Style           =   2  'Dropdown List
+      TabIndex        =   66
+      Top             =   810
+      Width           =   2100
+   End
    Begin VB.CommandButton cmdCompare 
       Caption         =   "Compare"
       Height          =   405
@@ -27,7 +37,7 @@ Begin VB.Form frmMERB
       TabIndex        =   44
       Text            =   "Multi-EditROM Set"
       Top             =   810
-      Width           =   9645
+      Width           =   4605
    End
    Begin VB.CommandButton cmdDown 
       Caption         =   "DOWN"
@@ -992,7 +1002,7 @@ Begin VB.Form frmMERB
    End
    Begin VB.Label Label1 
       BackColor       =   &H00C0FFFF&
-      Caption         =   $"frmMERB.frx":0000
+      Caption         =   $"frmMERB.frx":0029
       Height          =   615
       Left            =   60
       TabIndex        =   3
@@ -1014,10 +1024,11 @@ Dim Cr As String
 Private Sub Form_Load()
     Cr = Chr(13)        'Carriage Return
     SelectN 0           'Set First Text Box as selected
+    cboMode.ListIndex = 0
 End Sub
 
 Private Sub cmdAbout_Click()
-    MsgBox "MultiEditROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.1 - March 1/2018"
+    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.2 - Nov 15/2018"
 End Sub
 
 Private Sub lblN_DblClick(Index As Integer)
@@ -1202,9 +1213,10 @@ End Sub
 '--- Build the ROM
 Private Sub cmdBuild_Click()
     Dim Filename As String, FIO As Integer, FIO2 As Integer, FLen As Integer
-    Dim I As Integer, J As Integer, Buf As String, Padd As String
+    Dim I As Integer, J As Integer, Buf As String, Padd As String, Mode As Integer
     
     Padd = Chr(0)
+    Mode = cboMode.ListIndex
     
     '--- check that all the files exist
     Flag = 0
@@ -1235,9 +1247,12 @@ Private Sub cmdBuild_Click()
         
         '-- Padd short file
         If FLen < 4096 Then
-            For J = 1 To 4096 - FLen
-                Print #FIO, Padd;                               'Pad the file to 4096 bytes
-            Next J
+            Select Case Mode
+                Case 0 'Padd
+                    For J = 1 To 4096 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 4096 bytes
+                Case 1 'Duplicate
+                    Print #FIO, Buf;
+            End Select
         End If
     Next I
     
