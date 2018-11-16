@@ -1,0 +1,17 @@
+Multi-Character ROM Set 001
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-901640-01 (SuperPET).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-1.901447-08.bin
+N:\Computer\Commodore\SJG-Stuff\Projects\ColourPET\Fonts\CharROM\pet-c64-font.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-german-324242-10 (8296).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-french.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-japan-901447-12.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-swedish.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-russian.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-norwegian.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-hungarian.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-greek.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\superpet-swedish.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Custom\character-other-Games2.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_SJG\pacman-sjg.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-8096-unknown.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\CHARACTER\_Commodore\characters-901447-10m.bin
