@@ -2,14 +2,13 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
 Begin VB.Form frmMERB 
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Multi-EditROM Builder and Compare Utility"
+   Caption         =   "Multi-EditROM and Multi-ROM Builder and Compare Utility"
    ClientHeight    =   8025
    ClientLeft      =   45
    ClientTop       =   390
    ClientWidth     =   11565
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
-   MinButton       =   0   'False
    ScaleHeight     =   8025
    ScaleWidth      =   11565
    StartUpPosition =   3  'Windows Default
