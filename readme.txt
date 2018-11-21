@@ -1,14 +1,15 @@
-MERB: Multi-EditROM Builder  (c)2017 Steve J. Gray
-===========================  Version 1.1, March 1, 2018
+MERB: Multi-EditROM Builder  (c)2017-20188 Steve J. Gray
+===========================  Version 1.3, Nov 21, 2018
 
-This is a tool to build binary images for my Multi-Editor ROM projects:
+This is a tool to build binary images for my Multi-ROM projects:
 
 * Multi-EditorROM
 * Multi-EditorROM+
 * Multi-EditorROM with 40/80 column switcher
+* PET/CBM Multi-ROM
 
-These boards allow you to have 16 Editor ROMs in one EPROM and select which one you want
-via DIP switch or 40/80 switch. Each Editor ROM can be either 2K or 4K in size.
+These boards allow you to have 16 Editor, Firmware, or Character ROMs in one EPROM and select which one you want
+via DIP switch or 40/80 switch. Each ROM can be either 2K or 4K in size.
 
 About
 -----
@@ -59,6 +60,13 @@ to a TXT file. Click "Load Set" to load a saved set.
 Building a Set Image
 --------------------
 
+The Mode option lets you chose how 2K ROMs are handled. Pad will pad the file with zeros.
+Duplicate will duplicate the file. For Firmware (Editor, Kernal, BASIC etc) ROMs you'll
+probably want to Pad the file, unless you are creating a set for a ROM socket of 2K with
+the high address set HI. For character sets you'll probably want to duplicate.
+
+The "Allow short files" option lets you select binaries less than exactly 2K.
+
 When your slots are set click "Build It!". It will check all 16 slots to make sure:
 
 1) The file exists
@@ -75,14 +83,6 @@ Burning an Image
 
 The resulting ROM/BIN file will be 65535 bytes (64K) long and should be burned to a 27512
 (512KBit/64KByte) EPROM.
-
-
-Comparing ROMs
---------------
-
- You can compare ROMs. Select a SLOT to be the target reference ROM. Clicking the
-COMPARE button will return if the other ROM files are Larger, Smaller, Equal or how many bytes are
-different. Empty slots will be skipped. The results are shown in the INFO window.
 
 
 Conclusion

@@ -1,0 +1,17 @@
+MER-Option ROM 9 - Set 001
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\visicalc-9000.901472-04.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\MCTerm\mcterm1.11-rom-9000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\MCTerm\mcterm1.17-rom-9000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\MCTerm\mcterm1.21_rom-9000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\newtim (9000).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\Power (9000).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\SpellMaster (9000).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\suo-9000-basic4.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\SuperChip BASIC2 (9000).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\Watcom BASIC\WatBASIC4-5929 (9000).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\WordPro\wordpro3-rom.9000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\WordPro\wordcheck_rom-9000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\Braindos-9000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\smkit (9000).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\MicroMon-9000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\BATPRO_4.8_ROM1 (9000).BIN

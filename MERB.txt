@@ -1,5 +1,5 @@
 MERB: Multi-EditROM Builder  (c)2017-20188 Steve J. Gray
-===========================  Version 1.2, Nov 15, 2018
+===========================  Version 1.3, Nov 21, 2018
 
 This is a tool to build binary images for my Multi-ROM projects:
 
@@ -64,6 +64,8 @@ The Mode option lets you chose how 2K ROMs are handled. Pad will pad the file wi
 Duplicate will duplicate the file. For Firmware (Editor, Kernal, BASIC etc) ROMs you'll
 probably want to Pad the file, unless you are creating a set for a ROM socket of 2K with
 the high address set HI. For character sets you'll probably want to duplicate.
+
+The "Allow short files" option lets you select binaries less than exactly 2K.
 
 When your slots are set click "Build It!". It will check all 16 slots to make sure:
 

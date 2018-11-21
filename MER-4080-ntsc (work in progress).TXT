@@ -1,0 +1,17 @@
+MER-4000/8000, INTERNAL/NTSC,Original/Enhanced
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\EDIT\edit-4-40-n-60Hz-901499-01.bin
+C:\Users\steve\Documents\GitHub\cbm-edit-rom\binaries\sjg-edit-40-b-60-backarrow (2017-12-08).bin
+C:\Users\steve\Documents\GitHub\cbm-edit-rom\binaries\sjg-edit-40-n-ntsc-backarrow (2018-10-17).bin
+C:\Users\steve\Documents\GitHub\cbm-edit-rom\binaries\sjg-edit-40-b-ntsc-backarrow (2018-11-17).bin
+
+
+
+
+
+
+
+
+
+
+
+

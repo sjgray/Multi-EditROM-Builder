@@ -1,0 +1,17 @@
+MER-Option ROM A - Set 001
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\pclip_8296.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\Basic Expand-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\OrgaBASIC101-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\pascal3.0_rom-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\WordPro\wordpro3-rom-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\WordPro\wordpro4_rom-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\WordPro\wordpro-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\PicChip\picchip_MMpl_DOS-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\ToolKit\toolkit4.0_rom-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\arrow-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\Micromon3.0-a000-afff.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\jimsam4_rom-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\edex_4.4_french_a000_ud11.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\pascal3.0_rom-a000.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\Sort-MatrixSoftware (a000).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\BAT Pro\BATPRO_4.8_ROM2 (A000).BIN

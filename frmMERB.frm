@@ -12,6 +12,14 @@ Begin VB.Form frmMERB
    ScaleHeight     =   8025
    ScaleWidth      =   11565
    StartUpPosition =   3  'Windows Default
+   Begin VB.CheckBox cbAllowShort 
+      Caption         =   "Allow short files"
+      Height          =   345
+      Left            =   8850
+      TabIndex        =   67
+      Top             =   810
+      Width           =   2055
+   End
    Begin VB.ComboBox cboMode 
       Height          =   315
       ItemData        =   "frmMERB.frx":0000
@@ -1027,7 +1035,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub cmdAbout_Click()
-    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.2 - Nov 15/2018"
+    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.3 - Nov 21/2018"
 End Sub
 
 Private Sub lblN_DblClick(Index As Integer)
@@ -1059,12 +1067,15 @@ Private Sub cmdLoadSet_Click()
     Dim Filename As String
     Dim FIO As Integer, I As Integer, Tmp As String
     
+    On Local Error Resume Next                          'Allow incomplete set file
+    
     Filename = FileOpenSave("", 0, 1, "Load Set")
     If Exists(Filename) = True Then
         FIO = FreeFile
         Open Filename For Input As FIO
         Line Input #FIO, Tmp: txtDesc.Text = Tmp        'Set Description
         For I = 0 To 15
+            Tmp = ""
             Line Input #FIO, Tmp                        'Filename
             txtFN(I).Text = Tmp
         Next I
@@ -1078,7 +1089,7 @@ Private Sub cmdSaveSet_Click()
     Dim Filename As String
     Dim FIO As Integer, I As Integer, Tmp As String
     
-    Filename = FileOpenSave("", 0, 1, "Save Set")
+    Filename = FileOpenSave("", 1, 1, "Save Set")
     If Overwrite(Filename) = True Then
         FIO = FreeFile
         Open Filename For Output As FIO
@@ -1222,7 +1233,7 @@ Private Sub cmdBuild_Click()
     For I = 0 To 15
         Filename = txtFN(I).Text
         If Exists(Filename) = False Then MsgBox "Slot " & Str(I + 1) & " is unspecifiied or does not exist": Exit Sub
-        If FileLen(Filename) < 2048 Then MsgBox "The file '" & Filename & "' is < 2K bytes!": Exit Sub
+        If cbAllowShort.Value = vbUnchecked Then If FileLen(Filename) < 2048 Then MsgBox "The file '" & Filename & "' is < 2K bytes!": Exit Sub
         If FileLen(Filename) > 4096 Then MsgBox "The file '" & Filename & "' is > 4K bytes!": Exit Sub
     Next I
 
@@ -1250,7 +1261,9 @@ Private Sub cmdBuild_Click()
                 Case 0 'Padd
                     For J = 1 To 4096 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 4096 bytes
                 Case 1 'Duplicate
-                    Print #FIO, Buf;
+                    If FLen < 2048 Then For J = 1 To 2048 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 2048 bytes
+                    Print #FIO, Buf;                                                            'Copy the contents
+                    If FLen < 2048 Then For J = 1 To 2048 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 4096 bytes
             End Select
         End If
     Next I
@@ -1390,7 +1403,7 @@ Private Function FileOpenSave(ByVal DefFile As String, ByVal Mode As Integer, Fi
     Select Case FiltSet
         Case 0: CommonDialog.Filter = "All files (*.*)|*.*"
         Case 1: CommonDialog.Filter = "Text Files (*.TXT)|*.TXT"
-        Case 2: CommonDialog.Filter = "ROM Files (*.ROM, *.BIN)|*.ROM;*.BIN"
+        Case 2: CommonDialog.Filter = "ROM Files (*.bin, *.rom)|*.bin;*.rom"
     End Select
     
     If Mode = 0 Then CommonDialog.ShowOpen Else CommonDialog.ShowSave   'MODE: 0=Open, 1=Save
