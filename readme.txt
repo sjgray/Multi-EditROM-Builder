@@ -1,5 +1,5 @@
 MERB: Multi-EditROM Builder  (c)2017-20188 Steve J. Gray
-===========================  Version 1.3, Nov 21, 2018
+===========================  Version 1.31, Nov 21, 2018
 
 This is a tool to build binary images for my Multi-ROM projects:
 
@@ -29,11 +29,14 @@ currently selected slot. To set a filename in the slot you can:
 1) Click in any filename box and type a valid filename.
 2) Double-click the slot number to open the file selector dialog.
 3) Select a slot, then click "Add Binary".
-4) Drag a file from a Folder to any slot.
+4) Drag a file, or files, from a Folder to any slot.
 
 Make sure your ROM/BIN files are pure images. IE: They do NOT have a load address at the start.
 Do not use CRT files, P00 files or any file which contains header or any other non-ROM content.
-Files should be either 2048 or 4096 bytes long.
+Files should be either 2048 or 4096 bytes long. If you know the file is correct but is missing
+1 or more bytes then select the "Allow short files" option. Be careful that the file size is
+not 2050 or 4098 bytes as this indicates the likelyhood of the file containing two extra bytes
+for the load address. The file size of the selected file will be shown in the file info area.
 
 When you load a file that is 4096 bytes it MAY contain text or copyright embedded inside. This
 will be displayed to the right of the slots along with the actual file size.

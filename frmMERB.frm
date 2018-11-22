@@ -288,7 +288,7 @@ Begin VB.Form frmMERB
       Width           =   165
    End
    Begin VB.Label Label5 
-      Caption         =   "2K          4K         Over"
+      Caption         =   "2K          4K         Bad"
       Height          =   255
       Left            =   9660
       TabIndex        =   65
@@ -1035,7 +1035,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub cmdAbout_Click()
-    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.3 - Nov 21/2018"
+    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.31 - Nov 21/2018"
 End Sub
 
 Private Sub lblN_DblClick(Index As Integer)
@@ -1373,7 +1373,10 @@ Private Sub txtFN_OLEDragDrop(Index As Integer, Data As DataObject, Effect As Lo
         For Each vFn In Data.Files
             Filename = (vFn)                            'vFn is name of file dropped
             txtFN(Index).Text = Filename                'Set the text box to filename
+            Index = Index + 1                           'Point to next slot
+            If Index > 16 Then Exit For                 'All slots are filled, so done
             SelectN SelNum                              'Get info and set selected
+            SelNum = SelNum + 1                         'Make it selected slot
         Next vFn
     End If
 
