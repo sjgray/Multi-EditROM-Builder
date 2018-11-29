@@ -155,7 +155,7 @@ Begin VB.Form frmMERB
       Left            =   420
       OLEDropMode     =   1  'Manual
       TabIndex        =   22
-      Top             =   4020
+      Top             =   3990
       Width           =   6825
    End
    Begin VB.TextBox txtFN 
@@ -164,7 +164,7 @@ Begin VB.Form frmMERB
       Left            =   420
       OLEDropMode     =   1  'Manual
       TabIndex        =   20
-      Top             =   3630
+      Top             =   3600
       Width           =   6825
    End
    Begin VB.TextBox txtFN 
@@ -173,7 +173,7 @@ Begin VB.Form frmMERB
       Left            =   420
       OLEDropMode     =   1  'Manual
       TabIndex        =   18
-      Top             =   3240
+      Top             =   3210
       Width           =   6825
    End
    Begin VB.TextBox txtFN 
@@ -182,7 +182,7 @@ Begin VB.Form frmMERB
       Left            =   420
       OLEDropMode     =   1  'Manual
       TabIndex        =   16
-      Top             =   2850
+      Top             =   2820
       Width           =   6825
    End
    Begin VB.TextBox txtFN 
@@ -191,7 +191,7 @@ Begin VB.Form frmMERB
       Left            =   420
       OLEDropMode     =   1  'Manual
       TabIndex        =   14
-      Top             =   2460
+      Top             =   2430
       Width           =   6825
    End
    Begin VB.TextBox txtFN 
@@ -200,7 +200,7 @@ Begin VB.Form frmMERB
       Left            =   420
       OLEDropMode     =   1  'Manual
       TabIndex        =   12
-      Top             =   2070
+      Top             =   2040
       Width           =   6825
    End
    Begin VB.TextBox txtFN 
@@ -209,7 +209,7 @@ Begin VB.Form frmMERB
       Left            =   420
       OLEDropMode     =   1  'Manual
       TabIndex        =   10
-      Top             =   1680
+      Top             =   1650
       Width           =   6825
    End
    Begin VB.CommandButton cmdBuild 
@@ -242,7 +242,7 @@ Begin VB.Form frmMERB
       Left            =   420
       OLEDropMode     =   1  'Manual
       TabIndex        =   5
-      Top             =   1290
+      Top             =   1260
       Width           =   6825
    End
    Begin VB.CommandButton cmdSaveSet 
@@ -317,7 +317,7 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   15
       Left            =   7320
       TabIndex        =   64
@@ -337,7 +337,7 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   14
       Left            =   7320
       TabIndex        =   63
@@ -357,11 +357,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   13
       Left            =   7320
       TabIndex        =   62
-      Top             =   6360
+      Top             =   6330
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -377,11 +377,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   12
       Left            =   7320
       TabIndex        =   61
-      Top             =   5970
+      Top             =   5940
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -397,11 +397,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   11
       Left            =   7320
       TabIndex        =   60
-      Top             =   5580
+      Top             =   5550
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -417,11 +417,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   10
       Left            =   7320
       TabIndex        =   59
-      Top             =   5190
+      Top             =   5160
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -437,11 +437,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   9
       Left            =   7320
       TabIndex        =   58
-      Top             =   4800
+      Top             =   4770
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -457,11 +457,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   8
       Left            =   7320
       TabIndex        =   57
-      Top             =   4440
+      Top             =   4380
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -477,11 +477,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   7
       Left            =   7320
       TabIndex        =   56
-      Top             =   4050
+      Top             =   3990
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -497,11 +497,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   6
       Left            =   7320
       TabIndex        =   55
-      Top             =   3660
+      Top             =   3600
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -517,11 +517,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   5
       Left            =   7320
       TabIndex        =   54
-      Top             =   3270
+      Top             =   3210
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -537,11 +537,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   4
       Left            =   7320
       TabIndex        =   53
-      Top             =   2880
+      Top             =   2820
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -557,11 +557,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   3
       Left            =   7320
       TabIndex        =   52
-      Top             =   2490
+      Top             =   2430
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -577,11 +577,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   2
       Left            =   7320
       TabIndex        =   51
-      Top             =   2100
+      Top             =   2040
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -597,11 +597,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   1
       Left            =   7320
       TabIndex        =   50
-      Top             =   1710
+      Top             =   1650
       Width           =   345
    End
    Begin VB.Label lblK 
@@ -617,11 +617,11 @@ Begin VB.Form frmMERB
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   345
+      Height          =   375
       Index           =   0
       Left            =   7320
       TabIndex        =   49
-      Top             =   1320
+      Top             =   1260
       Width           =   345
    End
    Begin VB.Label Label4 
@@ -1035,7 +1035,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub cmdAbout_Click()
-    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.31 - Nov 21/2018"
+    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.32 - Nov 29/2018"
 End Sub
 
 Private Sub lblN_DblClick(Index As Integer)
@@ -1065,7 +1065,7 @@ Private Sub cmdAdd_Click()
 End Sub
 Private Sub cmdLoadSet_Click()
     Dim Filename As String
-    Dim FIO As Integer, I As Integer, Tmp As String
+    Dim FIO As Integer, i As Integer, Tmp As String
     
     On Local Error Resume Next                          'Allow incomplete set file
     
@@ -1074,11 +1074,11 @@ Private Sub cmdLoadSet_Click()
         FIO = FreeFile
         Open Filename For Input As FIO
         Line Input #FIO, Tmp: txtDesc.Text = Tmp        'Set Description
-        For I = 0 To 15
+        For i = 0 To 15
             Tmp = ""
             Line Input #FIO, Tmp                        'Filename
-            txtFN(I).Text = Tmp
-        Next I
+            txtFN(i).Text = Tmp
+        Next i
         Close FIO
         SelectN 0                                       'Select first file slot
     End If
@@ -1087,16 +1087,16 @@ End Sub
 
 Private Sub cmdSaveSet_Click()
     Dim Filename As String
-    Dim FIO As Integer, I As Integer, Tmp As String
+    Dim FIO As Integer, i As Integer, Tmp As String
     
     Filename = FileOpenSave("", 1, 1, "Save Set")
     If Overwrite(Filename) = True Then
         FIO = FreeFile
         Open Filename For Output As FIO
         Print #FIO, txtDesc.Text                        'Set Description
-        For I = 0 To 15
-            Print #FIO, txtFN(I).Text                   'Filename
-        Next I
+        For i = 0 To 15
+            Print #FIO, txtFN(i).Text                   'Filename
+        Next i
         Close FIO
     End If
     
@@ -1137,27 +1137,27 @@ Private Sub cmdUp_Click()
 End Sub
 
 Private Sub cmdDel_Click()
-    Dim Tmp As String, I As Integer, RGB As Long
+    Dim Tmp As String, i As Integer, RGB As Long
     
     If SelNum = 16 Then
         txtFN(SelNum).Text = ""
         lblK(SelNum).BackColor = vbBlack
     Else
-        For I = SelNum To 14
-            txtFN(I).Text = txtFN(I + 1).Text
-            lblK(I).BackColor = lblK(I + 1).BackColor
+        For i = SelNum To 14
+            txtFN(i).Text = txtFN(i + 1).Text
+            lblK(i).BackColor = lblK(i + 1).BackColor
         Next
         txtFN(15).Text = ""
         lblK(15).BackColor = vbBlack
     End If
 End Sub
 Private Sub cmdIns_Click()
-    Dim I As Integer, RGB As Long
+    Dim i As Integer, RGB As Long
     
         If SelNum < 15 Then
-            For I = 15 To SelNum + 1 Step -1
-                txtFN(I).Text = txtFN(I - 1).Text
-                lblK(I).BackColor = lblK(I - 1).BackColor
+            For i = 15 To SelNum + 1 Step -1
+                txtFN(i).Text = txtFN(i - 1).Text
+                lblK(i).BackColor = lblK(i - 1).BackColor
             Next
         End If
         txtFN(SelNum).Text = ""
@@ -1166,15 +1166,15 @@ Private Sub cmdIns_Click()
 End Sub
 
 Private Sub SelectN(ByVal Index As Integer)
-    Dim I As Integer
+    Dim i As Integer
     
-    For I = 0 To 15
-        If I = Index Then
-            lblN(I).BackColor = vbRed           'Selected is made RED
-            lblN(I).ForeColor = vbWhite
+    For i = 0 To 15
+        If i = Index Then
+            lblN(i).BackColor = vbRed           'Selected is made RED
+            lblN(i).ForeColor = vbWhite
         Else
-            lblN(I).BackColor = vbBlue          'Un-Selected is BLUE
-            lblN(I).ForeColor = vbWhite
+            lblN(i).BackColor = vbBlue          'Un-Selected is BLUE
+            lblN(i).ForeColor = vbWhite
         End If
     Next
     SelNum = Index                              'Remember it for other operations
@@ -1196,8 +1196,8 @@ Private Sub ShowInfo(ByVal Index As Integer)
         FLen = LOF(FIO)
         
         Select Case FLen
-            Case 2048: lblK(Index).BackColor = vbYellow
-            Case 4096: lblK(Index).BackColor = vbGreen
+            Case 2048, 2050: lblK(Index).BackColor = vbYellow
+            Case 4096, 4098: lblK(Index).BackColor = vbGreen
             Case Else: lblK(Index).BackColor = vbRed
         End Select
         
@@ -1223,19 +1223,19 @@ End Sub
 '--- Build the ROM
 Private Sub cmdBuild_Click()
     Dim Filename As String, FIO As Integer, FIO2 As Integer, FLen As Integer
-    Dim I As Integer, J As Integer, Buf As String, Padd As String, Mode As Integer
+    Dim i As Integer, J As Integer, Buf As String, Padd As String, Mode As Integer
     
     Padd = Chr(0)
     Mode = cboMode.ListIndex
     
     '--- check that all the files exist
     Flag = 0
-    For I = 0 To 15
-        Filename = txtFN(I).Text
-        If Exists(Filename) = False Then MsgBox "Slot " & Str(I + 1) & " is unspecifiied or does not exist": Exit Sub
+    For i = 0 To 15
+        Filename = txtFN(i).Text
+        If Exists(Filename) = False Then MsgBox "Slot " & Str(i + 1) & " is unspecifiied or does not exist": Exit Sub
         If cbAllowShort.Value = vbUnchecked Then If FileLen(Filename) < 2048 Then MsgBox "The file '" & Filename & "' is < 2K bytes!": Exit Sub
         If FileLen(Filename) > 4096 Then MsgBox "The file '" & Filename & "' is > 4K bytes!": Exit Sub
-    Next I
+    Next i
 
     '--- Get a filename
     Filename = FileOpenSave("", 1, 2, "Add ROM"): If Filename = "" Then Exit Sub
@@ -1243,30 +1243,39 @@ Private Sub cmdBuild_Click()
     
     '--- Open the Output file
     FIO = FreeFile
-    Open Filename For Output As FIO
+    Open Filename For Output As FIO: DoEvents
+    
+    HideSizes
        
     '--- Process Files
-    For I = 0 To 15
-        Filename = txtFN(I).Text
-        FIO2 = FreeFile
-        Open Filename For Binary As FIO2: FLen = LOF(FIO2)      'Open file and get length
-        Buf = Input(FLen, FIO2)                                 'Read entire file to buffer
-        Close FIO2                                              'Close it
+    For i = 0 To 15
+        Filename = txtFN(i).Text
         
+        lblInfo.Caption = "Writing " & Filename & "...": DoEvents
+        
+        FIO2 = FreeFile
+        Open Filename For Binary As FIO2: FLen = LOF(FIO2)                                      'Open file and get length
+        Buf = Input(FLen, FIO2)                                                                 'Read entire file to buffer
+        Close FIO2                                                                              'Close it
+        
+        If (FLen = 2050) Or (FLen = 4098) Then Buf = Mid(Buf, 2)                                'Remove first two bytes (load address)
         Print #FIO, Buf;
         
         '-- Padd short file
         If FLen < 4096 Then
             Select Case Mode
                 Case 0 'Padd
-                    For J = 1 To 4096 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 4096 bytes
+                    For J = 1 To 4096 - FLen: Print #FIO, Padd;: Next J                         'Pad the file to 4096 bytes
                 Case 1 'Duplicate
                     If FLen < 2048 Then For J = 1 To 2048 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 2048 bytes
                     Print #FIO, Buf;                                                            'Copy the contents
                     If FLen < 2048 Then For J = 1 To 2048 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 4096 bytes
             End Select
         End If
-    Next I
+        
+        lblK(i).Visible = True: DoEvents
+
+    Next i
     
     Close FIO
     
@@ -1276,7 +1285,7 @@ End Sub
 '--- Compare ROMs
 Private Sub cmdCompare_Click()
     Dim Filename As String, FIO As Integer, FIO2 As Integer, FLen As Integer, FLen2 As Integer
-    Dim I As Integer, J As Integer, Buf As String, Buf2 As String, Difs As Integer
+    Dim i As Integer, J As Integer, Buf As String, Buf2 As String, Difs As Integer
     Dim FX(15) As Boolean 'File Exists Flags array
     Dim Cr As String, Results As String, B1 As String, B2 As String
     
@@ -1291,38 +1300,45 @@ Private Sub cmdCompare_Click()
     Buf = Input(FLen, FIO)                              'Read entire file to buffer
     Close FIO                                           'Close the file
     
+    HideSizes
+    
     Results = "Comparing to SLOT " & Format(SelNum + 1) & "..." & Cr          'Initial result text
     
     '--- Process Files
-    For I = 0 To 15
-        Filename = txtFN(I).Text
+    For i = 0 To 15
+        Filename = txtFN(i).Text
             
-        If (Exists(Filename) = True) And (I <> SelNum) Then
+        lblInfo.Caption = "Reading slot " & Format(i)                           'Show Progress
+        DoEvents
+        
+        If (Exists(Filename) = True) And (i <> SelNum) Then
             FIO2 = FreeFile
-            Open Filename For Binary As FIO2: FLen2 = LOF(FIO2)      'Open file and get length
-            Buf2 = Input(FLen2, FIO2)                                'Read entire file to buffer
-            Close FIO2                                               'Close it
+            Open Filename For Binary As FIO2: FLen2 = LOF(FIO2)                 'Open file and get length
+            Buf2 = Input(FLen2, FIO2)                                           'Read entire file to buffer
+            Close FIO2                                                          'Close it
             
             Difs = 0
-            Results = Results & "SLOT" & Format(I + 1) & ": "         'Add slot#
+            Results = Results & "SLOT" & Format(i + 1) & ": "                   'Add slot#
             
             For J = 1 To FLen
-                If J > FLen2 Then Results = Results & " is shorter.": Exit For 'done comparing
+                If J > FLen2 Then Results = Results & " is shorter.": Exit For  'done comparing
                 B1 = Mid(Buf, J, 1)
                 B2 = Mid(Buf2, J, 1)
                 If B1 <> B2 Then Difs = Difs + 1
             Next J
-            If FLen2 > FLen Then Results = Results & " is longer."
+            If FLen2 > FLen Then Results = Results & " is longer."              'File is Longer
             
             If Difs = 0 Then
-                Results = Results & "MATCHES!"                      'File is SAME
+                Results = Results & "MATCHES!"                                  'File is SAME
             Else
-                Results = Results & Format(Difs) & " bytes differ."  'File DIFFERS
+                Results = Results & Format(Difs) & " bytes differ."             'File DIFFERS
             End If
-            Results = Results & Cr                                  'Add CR
+            Results = Results & Cr                                              'Add CR
         End If
         
-    Next I
+        lblK(i).Visible = True: DoEvents                                        'Show box
+        
+    Next i
     
     Close FIO
     
@@ -1374,7 +1390,7 @@ Private Sub txtFN_OLEDragDrop(Index As Integer, Data As DataObject, Effect As Lo
             Filename = (vFn)                            'vFn is name of file dropped
             txtFN(Index).Text = Filename                'Set the text box to filename
             Index = Index + 1                           'Point to next slot
-            If Index > 16 Then Exit For                 'All slots are filled, so done
+            If Index > 15 Then Exit For                 'All slots are filled, so done
             SelectN SelNum                              'Get info and set selected
             SelNum = SelNum + 1                         'Make it selected slot
         Next vFn
@@ -1432,3 +1448,10 @@ Public Function Overwrite(ByVal Filename As String) As Boolean
 End Function
 
 
+Public Function HideSizes()
+    Dim i As Integer
+    
+    For i = 0 To 15: lblK(i).Visible = False: Next
+    DoEvents
+
+End Function

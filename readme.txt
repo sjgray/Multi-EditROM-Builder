@@ -1,5 +1,5 @@
 MERB: Multi-EditROM Builder  (c)2017-20188 Steve J. Gray
-===========================  Version 1.31, Nov 21, 2018
+===========================  Version 1.32, Nov 29, 2018
 
 This is a tool to build binary images for my Multi-ROM projects:
 
@@ -33,13 +33,14 @@ currently selected slot. To set a filename in the slot you can:
 
 Make sure your ROM/BIN files are pure images. IE: They do NOT have a load address at the start.
 Do not use CRT files, P00 files or any file which contains header or any other non-ROM content.
-Files should be either 2048 or 4096 bytes long. If you know the file is correct but is missing
-1 or more bytes then select the "Allow short files" option. Be careful that the file size is
-not 2050 or 4098 bytes as this indicates the likelyhood of the file containing two extra bytes
-for the load address. The file size of the selected file will be shown in the file info area.
+Files should be either 2048, 2050, 4096 or 4098 bytes long. If a file is 2050 or 4098 bytes long
+the program will assume the first two bytes are a load address and will ignore them.
+If you know the file is correct but is missing 1 or more bytes then select the "Allow short files"
+option. The file size of the selected file will be shown in the file info area.
 
-When you load a file that is 4096 bytes it MAY contain text or copyright embedded inside. This
-will be displayed to the right of the slots along with the actual file size.
+When you load an Editor ROM file that is 4K bytes it MAY contain text or copyright embedded inside.
+Is so, this will be displayed to the right of the slots along with the actual file size. Other
+types of files will most likely show random text or nothing at all.
 
 
 Ordering Files
@@ -70,12 +71,7 @@ the high address set HI. For character sets you'll probably want to duplicate.
 
 The "Allow short files" option lets you select binaries less than exactly 2K.
 
-When your slots are set click "Build It!". It will check all 16 slots to make sure:
-
-1) The file exists
-2) The file is 2048 to 4096 bytes.
-
-Files are automatically padded to 4096 bytes.
+When your slots are set click "Build It!". Files are automatically padded to 4096 bytes.
  
 If all files are ok then it will ask you for a filename to save to. Enter one and click SAVE.
 Your EPROM binary file is created!
@@ -84,7 +80,7 @@ Your EPROM binary file is created!
 Burning an Image
 ----------------
 
-The resulting ROM/BIN file will be 65535 bytes (64K) long and should be burned to a 27512
+The resulting ROM/BIN file will be 65536 bytes (64K) long and should be burned to a 27512
 (512KBit/64KByte) EPROM.
 
 
