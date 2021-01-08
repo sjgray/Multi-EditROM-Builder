@@ -1022,7 +1022,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' MERB - Multi-EditorROM Builder, (C) 2017 Steve J. Gray
+' MERB - Multi-EditorROM Builder, (C) 2017-2021 Steve J. Gray
 ' ====
 
 Dim SelNum As Integer
@@ -1042,9 +1042,21 @@ Private Sub lblN_DblClick(Index As Integer)
     cmdAdd_Click
 End Sub
 
+'---
 Private Sub txtFN_GotFocus(Index As Integer)
     SelectN Index
 End Sub
+
+Private Sub txtFN_KeyPress(Index As Integer, KeyAscii As Integer)
+    If KeyAscii = 13 And Index < 16 Then txtFN(Index + 1).SetFocus
+End Sub
+
+'--- Display only Filename when focus is lost
+Private Sub txtFN_LostFocus(Index As Integer)
+    txtFN(Index).Tag = txtFN(Index).Text
+    txtFN(Index).Text = FName(txtFN(Index).Tag)
+End Sub
+
 
 Private Sub lblN_Click(Index As Integer)
     SelectN Index
@@ -1058,7 +1070,7 @@ Private Sub cmdAdd_Click()
     
     Filename = FileOpenSave("", 0, 2, "Add ROM")
     If Filename <> "" Then
-        txtFN(SelNum).Text = Filename
+        txtFN(SelNum).Tag = Filename
         SelectN SelNum
     End If
 
@@ -1076,8 +1088,9 @@ Private Sub cmdLoadSet_Click()
         Line Input #FIO, Tmp: txtDesc.Text = Tmp        'Set Description
         For i = 0 To 15
             Tmp = ""
-            Line Input #FIO, Tmp                        'Filename
-            txtFN(i).Text = Tmp
+            Line Input #FIO, Tmp                        'Path+Filename
+            txtFN(i).Text = FName(Tmp)                  'Filename Only for display
+            txtFN(i).Tag = Tmp                          'Path+Filename
         Next i
         Close FIO
         SelectN 0                                       'Select first file slot
@@ -1095,7 +1108,7 @@ Private Sub cmdSaveSet_Click()
         Open Filename For Output As FIO
         Print #FIO, txtDesc.Text                        'Set Description
         For i = 0 To 15
-            Print #FIO, txtFN(i).Text                   'Filename
+            Print #FIO, txtFN(i).Tag                    'Path+Filename
         Next i
         Close FIO
     End If
@@ -1103,13 +1116,17 @@ Private Sub cmdSaveSet_Click()
 End Sub
 
 Private Sub cmdDown_Click()
-    Dim Tmp As String, RGB As Long
+    Dim Tmp As String, Tmp2 As String, RGB As Long
     
     If SelNum < 15 Then
-        Tmp = txtFN(SelNum).Text
-        txtFN(SelNum).Text = txtFN(SelNum + 1).Text
-        txtFN(SelNum + 1).Text = Tmp
+        Tmp = txtFN(SelNum).Tag
+        Tmp2 = txtFN(SelNum).Text
         
+        txtFN(SelNum).Tag = txtFN(SelNum + 1).Tag
+        txtFN(SelNum + 1).Tag = Tmp
+        txtFN(SelNum).Text = txtFN(SelNum + 1).Text
+        txtFN(SelNum + 1).Text = Tmp2
+                
         RGB = lblK(SelNum).BackColor
         lblK(SelNum).BackColor = lblK(SelNum + 1).BackColor
         lblK(SelNum + 1).BackColor = RGB
@@ -1120,12 +1137,16 @@ Private Sub cmdDown_Click()
 End Sub
 
 Private Sub cmdUp_Click()
-    Dim Tmp As String, RGB As Long
+    Dim Tmp As String, Tmp2 As String, RGB As Long
     
     If SelNum > 0 Then
-        Tmp = txtFN(SelNum).Text
+        Tmp = txtFN(SelNum).Tag
+        Tmp2 = txtFN(SelNum).Text
+        
+        txtFN(SelNum).Tag = txtFN(SelNum - 1).Tag
+        txtFN(SelNum - 1).Tag = Tmp
         txtFN(SelNum).Text = txtFN(SelNum - 1).Text
-        txtFN(SelNum - 1).Text = Tmp
+        txtFN(SelNum - 1).Text = Tmp2
         
         RGB = lblK(SelNum).BackColor
         lblK(SelNum).BackColor = lblK(SelNum - 1).BackColor
@@ -1140,11 +1161,13 @@ Private Sub cmdDel_Click()
     Dim Tmp As String, i As Integer, RGB As Long
     
     If SelNum = 16 Then
+        txtFN(SelNum).Tag = ""
         txtFN(SelNum).Text = ""
         lblK(SelNum).BackColor = vbBlack
     Else
         For i = SelNum To 14
             txtFN(i).Text = txtFN(i + 1).Text
+            txtFN(i).Tag = txtFN(i + 1).Tag
             lblK(i).BackColor = lblK(i + 1).BackColor
         Next
         txtFN(15).Text = ""
@@ -1157,9 +1180,11 @@ Private Sub cmdIns_Click()
         If SelNum < 15 Then
             For i = 15 To SelNum + 1 Step -1
                 txtFN(i).Text = txtFN(i - 1).Text
+                txtFN(i).Tag = txtFN(i - 1).Tag
                 lblK(i).BackColor = lblK(i - 1).BackColor
             Next
         End If
+        txtFN(SelNum).Tag = ""
         txtFN(SelNum).Text = ""
         lblK(SelNum).BackColor = vbBlack
         
@@ -1179,6 +1204,8 @@ Private Sub SelectN(ByVal Index As Integer)
     Next
     SelNum = Index                              'Remember it for other operations
     ShowInfo Index                              'Get info from file
+    
+    txtFN(Index).Text = txtFN(Index).Tag
     DoEvents
 End Sub
 
@@ -1223,7 +1250,7 @@ End Sub
 '--- Build the ROM
 Private Sub cmdBuild_Click()
     Dim Filename As String, FIO As Integer, FIO2 As Integer, FLen As Integer
-    Dim i As Integer, J As Integer, Buf As String, Padd As String, Mode As Integer
+    Dim i As Integer, j As Integer, Buf As String, Padd As String, Mode As Integer
     
     Padd = Chr(0)
     Mode = cboMode.ListIndex
@@ -1265,11 +1292,11 @@ Private Sub cmdBuild_Click()
         If FLen < 4096 Then
             Select Case Mode
                 Case 0 'Padd
-                    For J = 1 To 4096 - FLen: Print #FIO, Padd;: Next J                         'Pad the file to 4096 bytes
+                    For j = 1 To 4096 - FLen: Print #FIO, Padd;: Next j                         'Pad the file to 4096 bytes
                 Case 1 'Duplicate
-                    If FLen < 2048 Then For J = 1 To 2048 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 2048 bytes
+                    If FLen < 2048 Then For j = 1 To 2048 - FLen: Print #FIO, Padd;: Next j     'Pad the file to 2048 bytes
                     Print #FIO, Buf;                                                            'Copy the contents
-                    If FLen < 2048 Then For J = 1 To 2048 - FLen: Print #FIO, Padd;: Next J     'Pad the file to 4096 bytes
+                    If FLen < 2048 Then For j = 1 To 2048 - FLen: Print #FIO, Padd;: Next j     'Pad the file to 4096 bytes
             End Select
         End If
         
@@ -1285,7 +1312,7 @@ End Sub
 '--- Compare ROMs
 Private Sub cmdCompare_Click()
     Dim Filename As String, FIO As Integer, FIO2 As Integer, FLen As Integer, FLen2 As Integer
-    Dim i As Integer, J As Integer, Buf As String, Buf2 As String, Difs As Integer
+    Dim i As Integer, j As Integer, Buf As String, Buf2 As String, Difs As Integer
     Dim FX(15) As Boolean 'File Exists Flags array
     Dim Cr As String, Results As String, B1 As String, B2 As String
     
@@ -1320,12 +1347,12 @@ Private Sub cmdCompare_Click()
             Difs = 0
             Results = Results & "SLOT" & Format(i + 1) & ": "                   'Add slot#
             
-            For J = 1 To FLen
-                If J > FLen2 Then Results = Results & " is shorter.": Exit For  'done comparing
-                B1 = Mid(Buf, J, 1)
-                B2 = Mid(Buf2, J, 1)
+            For j = 1 To FLen
+                If j > FLen2 Then Results = Results & " is shorter.": Exit For  'done comparing
+                B1 = Mid(Buf, j, 1)
+                B2 = Mid(Buf2, j, 1)
                 If B1 <> B2 Then Difs = Difs + 1
-            Next J
+            Next j
             If FLen2 > FLen Then Results = Results & " is longer."              'File is Longer
             
             If Difs = 0 Then
@@ -1453,5 +1480,19 @@ Public Function HideSizes()
     
     For i = 0 To 15: lblK(i).Visible = False: Next
     DoEvents
+
+End Function
+
+' Return the filename only from the end of the path
+Public Function FName(ByVal Path As String) As String
+
+Dim j As Integer
+
+j = InStrRev(Path, "\")
+If j > 0 Then
+    FName = Mid(Path, j + 1)
+Else
+    FName = Path
+End If
 
 End Function
