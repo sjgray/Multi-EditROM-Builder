@@ -1048,13 +1048,14 @@ Private Sub txtFN_GotFocus(Index As Integer)
 End Sub
 
 Private Sub txtFN_KeyPress(Index As Integer, KeyAscii As Integer)
-    If KeyAscii = 13 And Index < 16 Then txtFN(Index + 1).SetFocus
+    If (KeyAscii = 13) And (Index < 15) Then txtFN(Index + 1).SetFocus
 End Sub
 
 '--- Display only Filename when focus is lost
 Private Sub txtFN_LostFocus(Index As Integer)
     txtFN(Index).Tag = txtFN(Index).Text
     txtFN(Index).Text = FName(txtFN(Index).Tag)
+    DoEvents
 End Sub
 
 
@@ -1258,7 +1259,7 @@ Private Sub cmdBuild_Click()
     '--- check that all the files exist
     Flag = 0
     For i = 0 To 15
-        Filename = txtFN(i).Text
+        Filename = txtFN(i).Tag
         If Exists(Filename) = False Then MsgBox "Slot " & Str(i + 1) & " is unspecifiied or does not exist": Exit Sub
         If cbAllowShort.Value = vbUnchecked Then If FileLen(Filename) < 2048 Then MsgBox "The file '" & Filename & "' is < 2K bytes!": Exit Sub
         If FileLen(Filename) > 4096 Then MsgBox "The file '" & Filename & "' is > 4K bytes!": Exit Sub
@@ -1276,7 +1277,7 @@ Private Sub cmdBuild_Click()
        
     '--- Process Files
     For i = 0 To 15
-        Filename = txtFN(i).Text
+        Filename = txtFN(i).Tag
         
         lblInfo.Caption = "Writing " & Filename & "...": DoEvents
         
@@ -1415,7 +1416,8 @@ Private Sub txtFN_OLEDragDrop(Index As Integer, Data As DataObject, Effect As Lo
         Dim vFn As Variant
         For Each vFn In Data.Files
             Filename = (vFn)                            'vFn is name of file dropped
-            txtFN(Index).Text = Filename                'Set the text box to filename
+            txtFN(Index).Text = FName(Filename)         'Set the text box to filename
+            txtFN(Index).Tag = Filename                 'Set Tag to full path
             Index = Index + 1                           'Point to next slot
             If Index > 15 Then Exit For                 'All slots are filled, so done
             SelectN SelNum                              'Get info and set selected
@@ -1496,3 +1498,4 @@ Else
 End If
 
 End Function
+
