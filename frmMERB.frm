@@ -1028,27 +1028,33 @@ Attribute VB_Exposed = False
 Dim SelNum As Integer
 Dim Cr As String
 
+'---- Start Here
 Private Sub Form_Load()
-    Cr = Chr(13)        'Carriage Return
-    SelectN 0           'Set First Text Box as selected
+    Cr = Chr(13)            'Carriage Return
+    ' SelectN 0           'Set First Text Box as selected
     cboMode.ListIndex = 0
+    ClearAll                'Clear all the Entries and show them
+    SetCurrent 0
 End Sub
 
+'---- Show the Program About Box
 Private Sub cmdAbout_Click()
-    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2018 Steve J. Gray" & Cr & "Version 1.32 - Nov 29/2018"
+    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2021 Steve J. Gray" & Cr & "Version 1.4 - Jan 10/2021"
 End Sub
 
+'---- Double-click on Index button to load a binary
 Private Sub lblN_DblClick(Index As Integer)
     cmdAdd_Click
 End Sub
 
-'---
-Private Sub txtFN_GotFocus(Index As Integer)
-    SelectN Index
+'---- Handle Keystrokes in text boxes
+Private Sub txtFN_KeyPress(Index As Integer, KeyAscii As Integer)
+    If (KeyAscii = 13) And (Index < 15) Then txtFN(Index + 1).SetFocus: KeyAscii = 0
 End Sub
 
-Private Sub txtFN_KeyPress(Index As Integer, KeyAscii As Integer)
-    If (KeyAscii = 13) And (Index < 15) Then txtFN(Index + 1).SetFocus
+'---- Select the Text edit box
+Private Sub txtFN_GotFocus(Index As Integer)
+    SelectN Index
 End Sub
 
 '--- Display only Filename when focus is lost
@@ -1058,14 +1064,17 @@ Private Sub txtFN_LostFocus(Index As Integer)
     DoEvents
 End Sub
 
-
+'---- Select via Index Box
 Private Sub lblN_Click(Index As Integer)
     SelectN Index
 End Sub
 
+'---- Select via Size box
 Private Sub lblK_Click(Index As Integer)
     SelectN Index
 End Sub
+
+'---- Add a Binary
 Private Sub cmdAdd_Click()
     Dim Filename As String
     
@@ -1076,6 +1085,8 @@ Private Sub cmdAdd_Click()
     End If
 
 End Sub
+
+'---- Load a Set from TXT file
 Private Sub cmdLoadSet_Click()
     Dim Filename As String
     Dim FIO As Integer, i As Integer, Tmp As String
@@ -1084,6 +1095,7 @@ Private Sub cmdLoadSet_Click()
     
     Filename = FileOpenSave("", 0, 1, "Load Set")
     If Exists(Filename) = True Then
+    
         FIO = FreeFile
         Open Filename For Input As FIO
         Line Input #FIO, Tmp: txtDesc.Text = Tmp        'Set Description
@@ -1099,6 +1111,7 @@ Private Sub cmdLoadSet_Click()
     
 End Sub
 
+'---- Save a Set to TXT file
 Private Sub cmdSaveSet_Click()
     Dim Filename As String
     Dim FIO As Integer, i As Integer, Tmp As String
@@ -1116,6 +1129,7 @@ Private Sub cmdSaveSet_Click()
     
 End Sub
 
+'---- Move selected entry DOWN
 Private Sub cmdDown_Click()
     Dim Tmp As String, Tmp2 As String, RGB As Long
     
@@ -1137,6 +1151,7 @@ Private Sub cmdDown_Click()
     
 End Sub
 
+'---- Move selected entry UP
 Private Sub cmdUp_Click()
     Dim Tmp As String, Tmp2 As String, RGB As Long
     
@@ -1158,6 +1173,7 @@ Private Sub cmdUp_Click()
     
 End Sub
 
+'---- Delete Selected Entry and move lower entries UP
 Private Sub cmdDel_Click()
     Dim Tmp As String, i As Integer, RGB As Long
     
@@ -1175,6 +1191,8 @@ Private Sub cmdDel_Click()
         lblK(15).BackColor = vbBlack
     End If
 End Sub
+
+'---- Insert an Entry and move all lower entries DOWN
 Private Sub cmdIns_Click()
     Dim i As Integer, RGB As Long
     
@@ -1191,25 +1209,18 @@ Private Sub cmdIns_Click()
         
 End Sub
 
+'---- Select a specific Text Box
 Private Sub SelectN(ByVal Index As Integer)
-    Dim i As Integer
-    
-    For i = 0 To 15
-        If i = Index Then
-            lblN(i).BackColor = vbRed           'Selected is made RED
-            lblN(i).ForeColor = vbWhite
-        Else
-            lblN(i).BackColor = vbBlue          'Un-Selected is BLUE
-            lblN(i).ForeColor = vbWhite
-        End If
-    Next
     SelNum = Index                              'Remember it for other operations
+    SetCurrent Index                            'Set the Currently highlighted entry
     ShowInfo Index                              'Get info from file
     
-    txtFN(Index).Text = txtFN(Index).Tag
+    txtFN(Index).Text = txtFN(Index).Tag        'Edit the full path
+    txtFN(Index).SetFocus                       'Activate the cursor
     DoEvents
 End Sub
 
+'---- Show Information about the selected entry - File Size and extended info
 Private Sub ShowInfo(ByVal Index As Integer)
     Dim Tmp As String, Filename As String, FIO As Integer
     Dim FLen As Integer, Tmp2 As String
@@ -1248,7 +1259,7 @@ Private Sub ShowInfo(ByVal Index As Integer)
     
 End Sub
 
-'--- Build the ROM
+'---- Build the ROM
 Private Sub cmdBuild_Click()
     Dim Filename As String, FIO As Integer, FIO2 As Integer, FLen As Integer
     Dim i As Integer, j As Integer, Buf As String, Padd As String, Mode As Integer
@@ -1310,7 +1321,8 @@ Private Sub cmdBuild_Click()
     MsgBox "File successfully created!!!"
     
 End Sub
-'--- Compare ROMs
+
+'---- Compare ROMs
 Private Sub cmdCompare_Click()
     Dim Filename As String, FIO As Integer, FIO2 As Integer, FLen As Integer, FLen2 As Integer
     Dim i As Integer, j As Integer, Buf As String, Buf2 As String, Difs As Integer
@@ -1373,10 +1385,12 @@ Private Sub cmdCompare_Click()
     lblInfo.Caption = Results
     
 End Sub
+
 '===================
 ' FUNCTIONS and SUBS
 '===================
 
+'---- Check if a File Exists
 Private Function Exists(ByVal Filename As String) As Boolean
     Dim FIO As Integer
     
@@ -1393,7 +1407,7 @@ NoFile:
     
 End Function
 
-'--- Extracts only printable characters from string
+'---- Extracts only printable characters from string
 Private Function StripIt(ByVal S As String) As String
     Dim S2 As String, M As String, MV As Integer, A As Integer
         
@@ -1407,7 +1421,7 @@ Private Function StripIt(ByVal S As String) As String
     
 End Function
 
-'--- Drag and Drop
+'---- Drag and Drop
 ' To enable, set OLEDropMode to "1 - Manual" for each textFN control
 Private Sub txtFN_OLEDragDrop(Index As Integer, Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, Y As Single)
     Dim Filename As String
@@ -1416,7 +1430,7 @@ Private Sub txtFN_OLEDragDrop(Index As Integer, Data As DataObject, Effect As Lo
         Dim vFn As Variant
         For Each vFn In Data.Files
             Filename = (vFn)                            'vFn is name of file dropped
-            txtFN(Index).Text = FName(Filename)         'Set the text box to filename
+            'txtFN(Index).Text = FName(Filename)         'Set the text box to filename
             txtFN(Index).Tag = Filename                 'Set Tag to full path
             Index = Index + 1                           'Point to next slot
             If Index > 15 Then Exit For                 'All slots are filled, so done
@@ -1424,17 +1438,17 @@ Private Sub txtFN_OLEDragDrop(Index As Integer, Data As DataObject, Effect As Lo
             SelNum = SelNum + 1                         'Make it selected slot
         Next vFn
     End If
-
+    ShowAll
 End Sub
 
-'--- Provide feedback to user
+'---- Provide feedback to user
 ' If dragging a FILE then accept it, otherwise no.
 Private Sub txtFN_OLEDragOver(Index As Integer, Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, Y As Single, State As Integer)
     '0=do not allow drop, 1=inform source that data will be copied
     If Data.GetFormat(vbCFFiles) Then Effect = 1 Else Effect = 0
 End Sub
 
-'--- Common File Open or Save Dialog
+'---- Common File Open or Save Dialog
 ' You can specify a default filename, a File Filter list index (0-1), and Window Title
 ' MODE: 0=Open, 1=Save
 ' Returns a filename with full path. If cancelled will return null string
@@ -1476,7 +1490,7 @@ Public Function Overwrite(ByVal Filename As String) As Boolean
     End If
 End Function
 
-
+'---- Hide the File Sizes
 Public Function HideSizes()
     Dim i As Integer
     
@@ -1485,7 +1499,7 @@ Public Function HideSizes()
 
 End Function
 
-' Return the filename only from the end of the path
+'---- Return the filename only from the end of the path
 Public Function FName(ByVal Path As String) As String
 
 Dim j As Integer
@@ -1498,4 +1512,43 @@ Else
 End If
 
 End Function
+
+'---- Make all text boxes show the short filename only
+Public Sub ShowAll()
+
+Dim j As Integer
+
+For j = 0 To 15
+    txtFN(j).Text = FName(txtFN(j).Tag)
+Next j
+DoEvents
+
+End Sub
+
+'---- Clear All Entries
+Public Sub ClearAll()
+Dim j As Integer
+
+For j = 0 To 15
+    txtFN(j).Text = ""
+    txtFN(j).Tag = ""
+Next j
+ShowAll
+End Sub
+
+'----
+Public Sub SetCurrent(Index)
+    Dim i As Integer
+    
+    For i = 0 To 15
+        If i = Index Then
+            lblN(i).BackColor = vbRed           'Selected is made RED
+            lblN(i).ForeColor = vbWhite
+        Else
+            lblN(i).BackColor = vbBlue          'Un-Selected is BLUE
+            lblN(i).ForeColor = vbWhite
+        End If
+    Next
+
+End Sub
 
