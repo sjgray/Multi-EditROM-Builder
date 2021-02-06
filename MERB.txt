@@ -1,5 +1,5 @@
-MERB: Multi-EditROM Builder  (c)2017-20188 Steve J. Gray
-===========================  Version 1.31, Nov 21, 2018
+MERB: Multi-EditROM Builder  (c)2017-2021 Steve J. Gray
+===========================  Version 1.5, Feb 5, 2021
 
 This is a tool to build binary images for my Multi-ROM projects:
 
@@ -24,7 +24,7 @@ Selecting Files
 
 The program will open with a single screen. There are 16 numbered "slots" where you can
 specify a BINARY/ROM file to be included. One slot will be highlighted in RED. This is the
-currently selected slot. To set a filename in the slot you can:
+currently selected slot. To set a filename in the slot you can use the following methods:
 
 1) Click in any filename box and type a valid filename.
 2) Double-click the slot number to open the file selector dialog.
@@ -41,6 +41,8 @@ for the load address. The file size of the selected file will be shown in the fi
 When you load a file that is 4096 bytes it MAY contain text or copyright embedded inside. This
 will be displayed to the right of the slots along with the actual file size.
 
+The program will hide the full path of the file except while editing the filename.
+
 
 Ordering Files
 --------------
@@ -52,6 +54,14 @@ Insert Entry..... Moves selected slot and below down leaving an empty slot
 UP............... Moves the selected slot up
 DOWN............. Moves the selected slot down.
 
+
+Comparing Files
+---------------
+
+You can compare two or more files. First select the file you want to compare to, then click on the
+Compare button. It will load the selected file into memory then read each of the other files,
+comparing each byte. It will report if the files is longer or shorter and if the file is identical
+or how many bytes differ. Empty slots, or invalid files will be ignored.
 
 Working With Sets
 -----------------

@@ -35,7 +35,7 @@ Begin VB.Form frmMERB
       Height          =   405
       Left            =   7830
       TabIndex        =   48
-      Top             =   7560
+      Top             =   7590
       Width           =   1755
    End
    Begin VB.TextBox txtDesc 
@@ -1039,7 +1039,7 @@ End Sub
 
 '---- Show the Program About Box
 Private Sub cmdAbout_Click()
-    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2021 Steve J. Gray" & Cr & "Version 1.4 - Jan 10/2021"
+    MsgBox "MultiEditROM and MultiROM Builder, (C)2017-2021 Steve J. Gray" & Cr & "Version 1.5 - Feb 5/2021"
 End Sub
 
 '---- Double-click on Index button to load a binary
@@ -1116,7 +1116,7 @@ Private Sub cmdSaveSet_Click()
     Dim Filename As String
     Dim FIO As Integer, i As Integer, Tmp As String
     
-    Filename = FileOpenSave("", 1, 1, "Save Set")
+    Filename = FileOpenSave("", 1, 1, "Save Set"): If Filename = "" Then Exit Sub
     If Overwrite(Filename) = True Then
         FIO = FreeFile
         Open Filename For Output As FIO
@@ -1332,7 +1332,7 @@ Private Sub cmdCompare_Click()
     Cr = Chr(13)
    
     '--- Check target filename
-    Filename = txtFN(SelNum): If Exists(Filename) = False Then MsgBox "You must select a SLOT containing a file!": Exit Sub
+    Filename = txtFN(SelNum).Tag: If Exists(Filename) = False Then MsgBox "You must select a SLOT containing a file!": Exit Sub
         
     '--- Open the Output file
     FIO = FreeFile
@@ -1346,7 +1346,7 @@ Private Sub cmdCompare_Click()
     
     '--- Process Files
     For i = 0 To 15
-        Filename = txtFN(i).Text
+        Filename = txtFN(i).Tag
             
         lblInfo.Caption = "Reading slot " & Format(i)                           'Show Progress
         DoEvents
@@ -1430,7 +1430,7 @@ Private Sub txtFN_OLEDragDrop(Index As Integer, Data As DataObject, Effect As Lo
         Dim vFn As Variant
         For Each vFn In Data.Files
             Filename = (vFn)                            'vFn is name of file dropped
-            'txtFN(Index).Text = FName(Filename)         'Set the text box to filename
+            txtFN(Index).Text = FName(Filename)         'Set the text box to filename
             txtFN(Index).Tag = Filename                 'Set Tag to full path
             Index = Index + 1                           'Point to next slot
             If Index > 15 Then Exit For                 'All slots are filled, so done
