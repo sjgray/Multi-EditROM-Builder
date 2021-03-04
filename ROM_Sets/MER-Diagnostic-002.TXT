@@ -1,0 +1,17 @@
+MER 4000/8000/9000 Diagnostic - Set #002
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\KERNAL\kernal-4.901465-22.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\KERNAL\kernal-2.901465-03.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\BASIC\basic-4-b000.901465-19.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\BASIC\basic-4-b000.901465-23.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\BASIC\basic-4-c000.901465-20.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\BASIC\basic-4-d000.901465-21.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\EDIT\edit-4-40-n-50Hz.901498-01.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\EDIT\edit-4-40-n-60Hz-901499-01.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\EDIT\edit-4-80-b-50Hz-901474-04.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\EDIT\edit-4-80-b-60Hz-901474-03.bin
+C:\Users\steve\Documents\GitHub\cbm-edit-rom\binaries\sjg-edit-80-b-60-esc-wedge-ss80-reboot-backarrow (2017-09-21).bin
+C:\Users\steve\Documents\GitHub\cbm-edit-rom\binaries\sjg-edit-80-b-ntsc-esc-wedge-ss80-reboot-backarrow (2017-09-21).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\EDIT\edit-8296D-324243-04 DIN 4V4E (2532).bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\PET-TESTER\pettester4032.bin
+N:\Computer\Commodore\Computers\CBM-PET Family\_Firmware\Option ROMS\PET-TESTER\pettester8032.bin
+PETTESTE2KV03.bin
