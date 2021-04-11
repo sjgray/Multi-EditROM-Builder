@@ -8,8 +8,9 @@ This is a tool to build binary images for my Multi-ROM projects:
 * Multi-EditorROM with 40/80 column switcher
 * PET/CBM Multi-ROM
 
-These boards allow you to have 16 Editor, Firmware, or Character ROMs in one EPROM and select which one you want
-via DIP switch or 40/80 switch. Each ROM can be either 2K or 4K in size.
+These boards allow you to have 16 Editor, Firmware, or Character ROMs in one EPROM and select
+which one you want via DIP switch or 40/80 switch. Each ROM can be either 2K or 4K in size
+and will be padded to fill a 4K slot.
 
 About
 -----
@@ -24,22 +25,25 @@ Selecting Files
 
 The program will open with a single screen. There are 16 numbered "slots" where you can
 specify a BINARY/ROM file to be included. One slot will be highlighted in RED. This is the
-currently selected slot. To set a filename in the slot you can use the following methods:
+currently selected slot. To set a filename in the slot you can:
 
 1) Click in any filename box and type a valid filename.
 2) Double-click the slot number to open the file selector dialog.
 3) Select a slot, then click "Add Binary".
 4) Drag a file, or files, from a Folder to any slot.
 
-Make sure your ROM/BIN files are pure images. IE: They do NOT have a load address at the start.
-Do not use CRT files, P00 files or any file which contains header or any other non-ROM content.
-Files should be either 2048 or 4096 bytes long. If you know the file is correct but is missing
-1 or more bytes then select the "Allow short files" option. Be careful that the file size is
-not 2050 or 4098 bytes as this indicates the likelyhood of the file containing two extra bytes
-for the load address. The file size of the selected file will be shown in the file info area.
+Make sure your ROM/BIN files are pure images.
 
-When you load a file that is 4096 bytes it MAY contain text or copyright embedded inside. This
-will be displayed to the right of the slots along with the actual file size.
+Do not use CRT files, P00 files or any file which contains header or any other non-ROM
+content. Proper ROM files should be either 2048 or 4096 bytes long. If a file is 2050
+or 4098 bytes long the program will assume the first two bytes are a load address and will
+ignore them. If you know the file is correct but is missing 1 or more bytes, select the
+"Allow short files" option. The file size of the selected file will be shown in the file
+info area.
+
+When you load a file that is 4096 bytes it MAY contain text or copyright embedded inside.
+This will be displayed to the right of the slots along with the actual file size. Other
+types of files will most likely show random text or nothing at all.
 
 The program will hide the full path of the file except while editing the filename.
 
